@@ -6,8 +6,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <groupId>test</groupId>
     <packaging>jar</packaging>
-
-    <name>Notes</name>
+    <name>NotesTest</name>
 
     <properties>
         <main.class>com.gluonhq.samples.notes.Notes</main.class>
