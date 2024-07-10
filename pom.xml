@@ -9,7 +9,7 @@
     <name>NotesTest</name>
 
     <properties>
-        <main.class>com.gluonhq.samples.notes.Notes</main.class>
+        <main.class>com.beeaware.Main</main.class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <javafx.version>20</javafx.version>
@@ -24,6 +24,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -125,21 +131,29 @@
                     </attachList>
                     <mainClass>${main.class}</mainClass>
                     <reflectionList>
-                        <list>com.gluonhq.samples.notes.model.Model</list>
-                        <list>com.gluonhq.samples.notes.model.Note</list>
-                        <list>com.gluonhq.samples.notes.model.Settings</list>
-                        <list>com.gluonhq.samples.notes.service.Service</list>
-                        <list>com.gluonhq.samples.notes.views.EditionPresenter</list>
-                        <list>com.gluonhq.samples.notes.views.FilterPresenter</list>
-                        <list>com.gluonhq.samples.notes.views.NotesPresenter</list>
-                        <list>com.gluonhq.samples.notes.views.SettingsPresenter</list>
+                        <list>com.beeaware.data.model.ModelNote</list>
+                        <list>com.beeaware.data.Note</list>
+                        <list>com.beeaware.data.Hive</list>
+                        <list>com.beeaware.data.Action</list>
+                        <list>com.beeaware.data.Observation</list>
+                        <list>com.beeaware.data.Settings</list>
+                        <list>com.beeaware.service.Service</list>
+                        <list>com.beeaware.views.display.HivesPresenter</list>
+                        <list>com.beeaware.views.display.NotesPresenter</list>
+                        <list>com.beeaware.views.edit.EditHivePresenter</list>
+                        <list>com.beeaware.views.edit.EditNotePresenter</list>
+                        <list>com.beeaware.views.filter.FilterHivePresenter</list>
+                        <list>com.beeaware.views.filter.FilterNotePresenter</list>
+                        <list>com.beeaware.views.SettingsPresenter</list>
                     </reflectionList>
                     <bundlesList>
-                        <list>com.gluonhq.samples.notes.drawer</list>
-                        <list>com.gluonhq.samples.notes.views.edition</list>
-                        <list>com.gluonhq.samples.notes.views.filter</list>
-                        <list>com.gluonhq.samples.notes.views.notes</list>
-                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.beeaware.views.display.hives</list>
+                        <list>com.beeaware.views.display.notes</list>
+                        <list>com.beeaware.views.edit.editHive</list>
+                        <list>com.beeaware.views.edit.editNote</list>
+                        <list>com.beeaware.views.filter.filterHives</list>
+                        <list>com.beeaware.views.filter.filterNotes</list>
+                        <list>com.beeaware.views.settings</list>
                     </bundlesList>
                 </configuration>
             </plugin>

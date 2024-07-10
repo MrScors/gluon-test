@@ -1,0 +1,7 @@
+.root {
+
+}
+
+.button.icon-toggle.filter-button:filter-enabled {
+    -fx-text-fill: -alternate-swatch-100;
+}
