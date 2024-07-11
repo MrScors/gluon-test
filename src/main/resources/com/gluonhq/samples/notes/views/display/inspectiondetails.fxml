@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<View fx:id="inspectionDetails" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonhq.samples.notes.views.display.InspectionDetailsPresenter">
+   <center>
+      <VBox>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <children>
+            <!-- Title -->
+            <HBox spacing="10.0">
+               <!-- Inspection Details -->
+               <GridPane hgap="10" vgap="10" style="-fx-padding: 0 10 0 10;">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="100" prefWidth="200"/>
+                     <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"/>
+
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                     <RowConstraints vgrow="ALWAYS"/>
+                  </rowConstraints>
+
+                  <!-- Hive ID -->
+                  <Label text="UUID:" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="uuid" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+
+                  <!-- Hive ID -->
+                  <Label text="Hive ID:" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="hiveIdLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+                  <!-- State of Brood -->
+                  <Label text="Brood:" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="stateOfBroodLabel" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+
+                  <!-- Queen Presence -->
+                  <Label text="Queen:" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="queenPresenceLabel" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="7" GridPane.columnSpan="2"/>
+
+                  <!-- Amount of Chalkbrood -->
+                  <Label text="Chalkbrood:" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="amountOfChalkBroodLabel" GridPane.rowIndex="8" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="9" GridPane.columnSpan="2"/>
+
+                  <!-- Swarm Cells -->
+                  <Label text="Swarm Cells:" GridPane.rowIndex="10" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="swarmCellsLabel" GridPane.rowIndex="10" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+
+                  <!-- Anger Level -->
+                  <Label text="Anger:" GridPane.rowIndex="12" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <Label fx:id="angerLevelLabel" GridPane.rowIndex="12" GridPane.columnIndex="1" GridPane.halignment="LEFT"/>
+                  <Separator GridPane.rowIndex="13" GridPane.columnSpan="2"/>
+
+                  <!-- Actions Performed -->
+                  <Label text="Actions:" GridPane.rowIndex="14" GridPane.columnIndex="0" GridPane.valignment="TOP" GridPane.halignment="LEFT"/>
+                  <VBox GridPane.rowIndex="14" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                     <children>
+                        <ListView fx:id="actionsListView" />
+                     </children>
+                  </VBox>
+                  <Separator GridPane.rowIndex="15" GridPane.columnSpan="2"/>
+               </GridPane>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</View>
