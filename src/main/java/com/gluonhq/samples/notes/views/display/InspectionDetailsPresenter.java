@@ -28,23 +28,16 @@ package com.gluonhq.samples.notes.views.display;
 
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.CharmListView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.samples.notes.data.Inspection;
-import com.gluonhq.samples.notes.data.Settings;
 import com.gluonhq.samples.notes.data.enums.ActionType;
 import com.gluonhq.samples.notes.data.model.ModelInspection;
-import com.gluonhq.samples.notes.service.Service;
-import com.gluonhq.samples.notes.views.AppViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import lombok.Setter;
 
 import javax.inject.Inject;
-import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class InspectionDetailsPresenter {
@@ -62,7 +55,7 @@ public class InspectionDetailsPresenter {
     @FXML private ResourceBundle resources;
 
     @Inject private ModelInspection modelInspection;
-    
+
 
     public void initialize() {
 

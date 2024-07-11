@@ -74,6 +74,7 @@ public class EditInspectionPresenter {
     @FXML private CheckBox harvestingHoneyAction;
 
     @FXML private ResourceBundle resources;
+    @Inject private ModelHive modelHive;
 
     private boolean editMode;
 
@@ -127,6 +128,7 @@ public class EditInspectionPresenter {
 
                     editMode = true;
                 } else {
+                    hiveId.setText(String.valueOf(modelHive.getActiveHive().get().getId()));
                     addingQueenAction.setSelected(false);
                     removingQueenAction.setSelected(false);
                     exportingBroodFramesAction.setSelected(false);

@@ -139,6 +139,7 @@ public class HivesPresenter {
         service.removeHive(hive);
     }
     private void addInspection(Hive hive) {
+        modelHive.getActiveHive().set(hive);
         AppViewManager.EDIT_INSPECTION_VIEW.switchView();
     }
 
