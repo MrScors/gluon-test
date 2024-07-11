@@ -140,7 +140,7 @@ public class HivesPresenter {
     }
     private void addInspection(Hive hive) {
         modelHive.getActiveHive().set(hive);
-        AppViewManager.EDIT_INSPECTION_VIEW.switchView();
+//        AppViewManager.EDIT_INSPECTION_VIEW.switchView();
     }
 
     private void updateSettings() {

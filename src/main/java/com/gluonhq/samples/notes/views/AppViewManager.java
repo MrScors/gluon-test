@@ -34,11 +34,11 @@ import com.gluonhq.charm.glisten.control.Avatar;
 import com.gluonhq.charm.glisten.control.NavigationDrawer;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.samples.notes.views.display.HivesPresenter;
-import com.gluonhq.samples.notes.views.display.InspectionDetailsPresenter;
-import com.gluonhq.samples.notes.views.display.InspectionsPresenter;
+//import com.gluonhq.samples.notes.views.display.InspectionDetailsPresenter;
+//import com.gluonhq.samples.notes.views.display.InspectionsPresenter;
 import com.gluonhq.samples.notes.views.display.NotesPresenter;
 import com.gluonhq.samples.notes.views.edit.EditHivePresenter;
-import com.gluonhq.samples.notes.views.edit.EditInspectionPresenter;
+//import com.gluonhq.samples.notes.views.edit.EditInspectionPresenter;
 import com.gluonhq.samples.notes.views.edit.EditNotePresenter;
 import javafx.scene.image.Image;
 
@@ -56,10 +56,10 @@ public class AppViewManager {
 
     public static final AppView HIVES_VIEW = view("Hives", HivesPresenter.class, MaterialDesignIcon.HOME, SHOW_IN_DRAWER, HOME_VIEW, SKIP_VIEW_STACK);
     public static final AppView NOTES_VIEW = view("Notes", NotesPresenter.class, MaterialDesignIcon.LIST, SHOW_IN_DRAWER);
-    public static final AppView INSPECTIONS_VIEW = view("Inspections", InspectionsPresenter.class, MaterialDesignIcon.CHECK, SHOW_IN_DRAWER);
-    public static final AppView INSPECTION_DETAILS_VIEW = view("Inspection Details", InspectionDetailsPresenter.class, MaterialDesignIcon.CHECK, SKIP_VIEW_STACK);
+//    public static final AppView INSPECTIONS_VIEW = view("Inspections", InspectionsPresenter.class, MaterialDesignIcon.CHECK, SHOW_IN_DRAWER);
+//    public static final AppView INSPECTION_DETAILS_VIEW = view("Inspection Details", InspectionDetailsPresenter.class, MaterialDesignIcon.CHECK, SKIP_VIEW_STACK);
     public static final AppView EDIT_HIVE_VIEW = view("Edit Hive", EditHivePresenter.class, MaterialDesignIcon.EDIT, SKIP_VIEW_STACK);
-    public static final AppView EDIT_INSPECTION_VIEW = view("Edit Inspection", EditInspectionPresenter.class, MaterialDesignIcon.EDIT, SKIP_VIEW_STACK);
+//    public static final AppView EDIT_INSPECTION_VIEW = view("Edit Inspection", EditInspectionPresenter.class, MaterialDesignIcon.EDIT, SKIP_VIEW_STACK);
     public static final AppView EDIT_NOTE_VIEW = view("Edit Note", EditNotePresenter.class, MaterialDesignIcon.EDIT, SKIP_VIEW_STACK);
     public static final AppView SETTINGS_VIEW = view("Settings", SettingsPresenter.class, MaterialDesignIcon.SETTINGS, SHOW_IN_DRAWER);
     
