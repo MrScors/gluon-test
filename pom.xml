@@ -153,6 +153,13 @@
                         <list>com.gluonhq.samples.notes.views.filter</list>
                         <list>com.gluonhq.samples.notes.views.notes</list>
                         <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
+                        <list>com.gluonhq.samples.notes.views.settings</list>
                     </bundlesList>
                 </configuration>
             </plugin>

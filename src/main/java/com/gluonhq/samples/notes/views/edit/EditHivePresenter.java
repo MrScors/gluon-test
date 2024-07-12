@@ -49,9 +49,9 @@ import java.util.stream.Collectors;
 
 public class EditHivePresenter {
 
-    @Inject private Service service;
+    @Inject private Service service = Service.getInstance();
 
-    @Inject private ModelHive modelHive;
+    private ModelHive modelHive = ModelHive.getInstance();
 
     @FXML private View edition;
 
@@ -73,7 +73,7 @@ public class EditHivePresenter {
                 
                 Hive activeHive = modelHive.getActiveHive().get();
                 if (activeHive != null) {
-                    submit.setText(resources.getString("button.submit.text"));
+                    submit.setText("Submit");
                     boxes.setText(formatList(activeHive.getOccupiedBoxes(), " "));
                     aliveFlag.setSelected(activeHive.isAlive());
 
@@ -88,7 +88,7 @@ public class EditHivePresenter {
                     editMode = true;
                 } else {
                     aliveFlag.setSelected(true);
-                    submit.setText(resources.getString("button.submit.text"));
+                    submit.setText("Submit");
 
                     // Enable submit button only if boxes is not empty
                     submit.disableProperty().bind(Bindings.createBooleanBinding(() ->
@@ -98,7 +98,7 @@ public class EditHivePresenter {
                 }
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText(resources.getString(editMode ? "appbar.title.edit" : "appbar.title.add"));
+                appBar.setTitleText(editMode ? "Edit" : "Add");
             } else {
                 boxes.clear();
             }

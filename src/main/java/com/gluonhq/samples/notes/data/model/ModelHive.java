@@ -27,12 +27,17 @@
 package com.gluonhq.samples.notes.data.model;
 
 import com.gluonhq.samples.notes.data.Hive;
+import com.gluonhq.samples.notes.service.Service;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import lombok.Getter;
 
 public class ModelHive {
     
     private final ObjectProperty<Hive> activeHive = new SimpleObjectProperty<>();
+
+    @Getter
+    private static final ModelHive instance = new ModelHive();
     
     public ObjectProperty<Hive> getActiveHive() {
         return activeHive;

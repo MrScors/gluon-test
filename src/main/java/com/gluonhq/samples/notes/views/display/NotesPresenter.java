@@ -65,13 +65,13 @@ public class NotesPresenter {
 
     @FXML private View notes;
 
-    @Inject private ModelNote modelNote;
+    private ModelNote modelNote = ModelNote.getInstance();
     
     @FXML private CharmListView<Note, LocalDate> lstNotes;
 
     @FXML private ResourceBundle resources;
 
-    @Inject private Service service;
+    @Inject private Service service = Service.getInstance();
 
     private FilteredList<Note> filteredList;
     
@@ -86,7 +86,7 @@ public class NotesPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText(resources.getString("appbar.title"));
+                appBar.setTitleText("Title");
                 appBar.getActionItems().add(filterButton);
             }
         });

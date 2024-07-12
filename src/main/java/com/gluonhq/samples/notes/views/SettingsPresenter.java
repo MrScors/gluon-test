@@ -58,7 +58,7 @@ public class SettingsPresenter {
 
     @FXML private ResourceBundle resources;
 
-    @Inject private Service service;
+    @Inject private Service service = Service.getInstance();
     private Settings config;
 
     public void initialize() {
@@ -68,7 +68,7 @@ public class SettingsPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText(resources.getString("appbar.title"));
+                appBar.setTitleText("Title");
                 appBar.getActionItems().add(MaterialDesignIcon.CLOSE.button(e -> AppManager.getInstance().goHome()));
             }
         });

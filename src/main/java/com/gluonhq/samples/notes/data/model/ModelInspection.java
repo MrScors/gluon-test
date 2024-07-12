@@ -29,11 +29,14 @@ package com.gluonhq.samples.notes.data.model;
 import com.gluonhq.samples.notes.data.Inspection;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import lombok.Getter;
 
 public class ModelInspection {
     
     private final ObjectProperty<Inspection> activeInspection = new SimpleObjectProperty<>();
-    
+
+    @Getter
+    private static final ModelInspection instance = new ModelInspection();
     public ObjectProperty<Inspection> getActiveInspection() {
         return activeInspection;
     }

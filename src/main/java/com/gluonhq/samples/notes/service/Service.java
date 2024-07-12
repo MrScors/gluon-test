@@ -43,6 +43,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
+import lombok.Getter;
+
 import javax.annotation.PostConstruct;
 import java.util.Comparator;
 
@@ -51,7 +53,6 @@ public class Service {
     private static final String NOTES = "notes-v1";
     private static final String HIVES = "hives-v1";
     private static final String INSPECTIONS = "inspections-v1";
-
     private static final String NOTES_SETTINGS = "notes-settings-v1";
     
     private final ListProperty<Note> notes = new SimpleListProperty<>(FXCollections.observableArrayList());
@@ -61,9 +62,11 @@ public class Service {
     private final ObjectProperty<Settings> settings = new SimpleObjectProperty<>(new Settings());
     
     private DataClient dataClient;
+
+    @Getter
+    private static final Service instance = new Service();
     
-    @PostConstruct
-    public void postConstruct() {
+    {
         dataClient = DataClientBuilder.create()
                 .operationMode(OperationMode.LOCAL_ONLY)
 //                .operationMode(OperationMode.CLOUD_ONLY) // Requires CloudLink account

@@ -66,14 +66,12 @@ public class HivesPresenter {
     private static final PseudoClass PSEUDO_FILTER_ENABLED = PseudoClass.getPseudoClass("filter-enabled");
 
     @FXML private View hives;
-
-    @Inject private ModelHive modelHive;
+    private ModelHive modelHive = ModelHive.getInstance();;
     
     @FXML private CharmListView<Hive, LocalDate> lstHives;
 
     @FXML private ResourceBundle resources;
-
-    @Inject private Service service;
+    @Inject private Service service = Service.getInstance();
 
     private FilteredList<Hive> filteredList;
     
@@ -88,7 +86,7 @@ public class HivesPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText(resources.getString("appbar.title"));
+                appBar.setTitleText("Title");
                 appBar.getActionItems().add(filterButton);
             }
         });
@@ -140,7 +138,7 @@ public class HivesPresenter {
     }
     private void addInspection(Hive hive) {
         modelHive.getActiveHive().set(hive);
-//        AppViewManager.EDIT_INSPECTION_VIEW.switchView();
+        AppViewManager.EDIT_INSPECTION_VIEW.switchView();
     }
 
     private void updateSettings() {

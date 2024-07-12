@@ -29,10 +29,14 @@ package com.gluonhq.samples.notes.data.model;
 import com.gluonhq.samples.notes.data.Note;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import lombok.Getter;
 
 public class ModelNote {
     
     private final ObjectProperty<Note> activeNote = new SimpleObjectProperty<>();
+
+    @Getter
+    private static final ModelNote instance = new ModelNote();
     
     public ObjectProperty<Note> activeNote() {
         return activeNote;

@@ -28,21 +28,39 @@ package com.gluonhq.samples.notes;
 
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.visual.Swatch;
-import com.gluonhq.samples.notes.views.AppViewManager;
+import com.gluonhq.samples.notes.views.DrawerManager;
+import com.gluonhq.samples.notes.views.display.HivesView;
+import com.gluonhq.samples.notes.views.display.InspectionDetailsView;
+import com.gluonhq.samples.notes.views.display.InspectionsView;
+import com.gluonhq.samples.notes.views.display.NotesView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import static com.gluonhq.charm.glisten.application.AppManager.HOME_VIEW;
+
 public class Main extends Application {
 
     public static final String POPUP_FILTER_NOTES = "Filter Notes";
     public static final String POPUP_FILTER_HIVES = "Filter Hives";
+    public static final String HIVES_VIEW = HOME_VIEW;
+    public static final String NOTES_VIEW = "Notes";
+    public static final String INSPECTIONS_VIEW = "InspectionsView";
+    public static final String INSPECTION_DETAILS_VIEW = "InspectionDetailsView";
+
     private final AppManager appManager = AppManager.initialize(this::postInit);
 
     @Override
     public void init() {
-        AppViewManager.registerViewsAndDrawer();
+        appManager.addViewFactory(HIVES_VIEW, () -> new HivesView().getView());
+        appManager.addViewFactory(NOTES_VIEW, () -> new NotesView().getView());
+        appManager.addViewFactory(INSPECTIONS_VIEW, () -> new InspectionsView().getView());
+        appManager.addViewFactory(INSPECTION_DETAILS_VIEW, () -> new InspectionDetailsView().getView());
+//        appManager.addViewFactory(LIST_ACTION_VIEW, () -> new ListActionView().getView());
+//        appManager.addViewFactory(LIST_OBSERVATION_VIEW, () -> new ListObservationView().getView());
+
+        DrawerManager.buildDrawer(appManager);
     }
 
     @Override

@@ -45,9 +45,9 @@ import java.util.ResourceBundle;
 
 public class EditNotePresenter {
 
-    @Inject private Service service;
+    @Inject private Service service = Service.getInstance();
 
-    @Inject private ModelNote modelNote;
+    private ModelNote modelNote = ModelNote.getInstance();
 
     @FXML private View edition;
 
@@ -69,7 +69,7 @@ public class EditNotePresenter {
                 
                 Note activeNote = modelNote.activeNote().get();
                 if (activeNote != null) {
-                    submit.setText(resources.getString("button.submit.text"));
+                    submit.setText("Submit");
                     title.setText(activeNote.getTitle());
                     comment.setText(activeNote.getText());
                     submit.disableProperty().bind(Bindings.createBooleanBinding(() -> {
@@ -83,7 +83,7 @@ public class EditNotePresenter {
                         }, title.textProperty(),comment.textProperty()));
                     editMode = true;
                 } else {
-                    submit.setText(resources.getString("button.submit.text"));
+                    submit.setText("Submit");
                     submit.disableProperty().bind(Bindings.createBooleanBinding(() ->
                             title.textProperty()
                                 .isEmpty()
@@ -94,7 +94,7 @@ public class EditNotePresenter {
                  
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText(resources.getString(editMode ? "appbar.title.edit" : "appbar.title.add"));
+                appBar.setTitleText(editMode ? "Edit" : "Add");
             } else {
                 title.clear();
                 comment.clear();
