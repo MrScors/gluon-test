@@ -50,6 +50,7 @@ import java.time.ZoneOffset;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.gluonhq.samples.notes.Main.HIVES_VIEW;
 import static com.gluonhq.samples.notes.Utils.formatList;
 
 public class EditInspectionPresenter {
@@ -73,7 +74,7 @@ public class EditInspectionPresenter {
     @FXML private CheckBox exportingBroodFramesAction;
     @FXML private CheckBox harvestingHoneyAction;
 
-    @FXML private ResourceBundle resources;
+//    @FXML private ResourceBundle resources;
     private ModelHive modelHive = ModelHive.getInstance();
 
     private boolean editMode;
@@ -128,7 +129,9 @@ public class EditInspectionPresenter {
 
                     editMode = true;
                 } else {
-                    hiveId.setText("");
+                    if(modelHive != null && modelHive.getActiveHive().get() != null){
+                        hiveId.setText(String.valueOf(modelHive.getActiveHive().get().getId()));
+                    }
                     addingQueenAction.setSelected(false);
                     removingQueenAction.setSelected(false);
                     exportingBroodFramesAction.setSelected(false);
@@ -212,7 +215,7 @@ public class EditInspectionPresenter {
         swarmCells.setValue("Unknown");
         angerLevel.setValue("Unknown");
         modelInspection.getActiveInspection().set(null);
-        AppViewManager.HIVES_VIEW.switchView();
+        AppManager.getInstance().switchView(HIVES_VIEW);
     }
 
 }

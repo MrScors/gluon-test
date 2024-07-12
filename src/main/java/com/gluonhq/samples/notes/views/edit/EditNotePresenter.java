@@ -43,6 +43,8 @@ import javafx.scene.control.TextField;
 import javax.inject.Inject;
 import java.util.ResourceBundle;
 
+import static com.gluonhq.samples.notes.Main.NOTES_VIEW;
+
 public class EditNotePresenter {
 
     @Inject private Service service = Service.getInstance();
@@ -56,7 +58,7 @@ public class EditNotePresenter {
     @FXML private TextField title;
     @FXML private TextArea comment;
 
-    @FXML private ResourceBundle resources;
+//    @FXML private ResourceBundle resources;
 
     private boolean editMode;
 
@@ -118,7 +120,7 @@ public class EditNotePresenter {
         title.clear();
         comment.clear();
         modelNote.activeNote().set(null);
-        AppViewManager.NOTES_VIEW.switchView();
+        AppManager.getInstance().switchView(NOTES_VIEW);
     }
     
 }

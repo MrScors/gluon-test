@@ -33,6 +33,11 @@ import com.gluonhq.samples.notes.views.display.HivesView;
 import com.gluonhq.samples.notes.views.display.InspectionDetailsView;
 import com.gluonhq.samples.notes.views.display.InspectionsView;
 import com.gluonhq.samples.notes.views.display.NotesView;
+import com.gluonhq.samples.notes.views.edit.EditHiveView;
+import com.gluonhq.samples.notes.views.edit.EditInspectionView;
+import com.gluonhq.samples.notes.views.edit.EditNoteView;
+import com.gluonhq.samples.notes.views.filter.FilterHiveView;
+import com.gluonhq.samples.notes.views.filter.FilterNoteView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -45,9 +50,14 @@ public class Main extends Application {
     public static final String POPUP_FILTER_NOTES = "Filter Notes";
     public static final String POPUP_FILTER_HIVES = "Filter Hives";
     public static final String HIVES_VIEW = HOME_VIEW;
-    public static final String NOTES_VIEW = "Notes";
+    public static final String NOTES_VIEW = "NotesView";
     public static final String INSPECTIONS_VIEW = "InspectionsView";
     public static final String INSPECTION_DETAILS_VIEW = "InspectionDetailsView";
+    public static final String EDIT_HIVE_VIEW = "EditHiveView";
+    public static final String EDIT_NOTE_VIEW = "EditNoteView";
+    public static final String EDIT_INSPECTION_VIEW = "EditInspectionsView";
+    public static final String FILTER_HIVES_VIEW = "FilterHivesView";
+    public static final String FILTER_NOTES_VIEW = "FilterNotesView";
 
     private final AppManager appManager = AppManager.initialize(this::postInit);
 
@@ -57,6 +67,11 @@ public class Main extends Application {
         appManager.addViewFactory(NOTES_VIEW, () -> new NotesView().getView());
         appManager.addViewFactory(INSPECTIONS_VIEW, () -> new InspectionsView().getView());
         appManager.addViewFactory(INSPECTION_DETAILS_VIEW, () -> new InspectionDetailsView().getView());
+        appManager.addViewFactory(EDIT_HIVE_VIEW, () -> new EditHiveView().getView());
+        appManager.addViewFactory(EDIT_NOTE_VIEW, () -> new EditNoteView().getView());
+        appManager.addViewFactory(EDIT_INSPECTION_VIEW, () -> new EditInspectionView().getView());
+        appManager.addViewFactory(FILTER_HIVES_VIEW, () -> new FilterHiveView().getView());
+        appManager.addViewFactory(FILTER_NOTES_VIEW, () -> new FilterNoteView().getView());
 //        appManager.addViewFactory(LIST_ACTION_VIEW, () -> new ListActionView().getView());
 //        appManager.addViewFactory(LIST_OBSERVATION_VIEW, () -> new ListObservationView().getView());
 

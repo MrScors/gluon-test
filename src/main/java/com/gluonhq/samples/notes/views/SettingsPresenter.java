@@ -68,7 +68,7 @@ public class SettingsPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText("Title");
+                appBar.setTitleText("Settings");
                 appBar.getActionItems().add(MaterialDesignIcon.CLOSE.button(e -> AppManager.getInstance().goHome()));
             }
         });

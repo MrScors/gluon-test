@@ -39,6 +39,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+
+import static com.gluonhq.samples.notes.Main.HIVES_VIEW;
 import static com.gluonhq.samples.notes.Utils.formatList;
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -60,7 +62,7 @@ public class EditHivePresenter {
     @FXML private TextField boxes;
     @FXML private CheckBox aliveFlag;
 
-    @FXML private ResourceBundle resources;
+//    @FXML private ResourceBundle resources;
 
     private boolean editMode;
 
@@ -127,7 +129,7 @@ public class EditHivePresenter {
     private void close() {
         boxes.clear();
         modelHive.getActiveHive().set(null);
-        AppViewManager.HIVES_VIEW.switchView();
+        AppManager.getInstance().switchView(HIVES_VIEW);
     }
     
 }

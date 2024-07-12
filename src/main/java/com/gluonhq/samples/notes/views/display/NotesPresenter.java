@@ -59,6 +59,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
+import static com.gluonhq.samples.notes.Main.EDIT_NOTE_VIEW;
+
 public class NotesPresenter {
 
     private static final PseudoClass PSEUDO_FILTER_ENABLED = PseudoClass.getPseudoClass("filter-enabled");
@@ -86,7 +88,7 @@ public class NotesPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText("Title");
+                appBar.setTitleText("Notes");
                 appBar.getActionItems().add(filterButton);
             }
         });
@@ -130,7 +132,7 @@ public class NotesPresenter {
     
     private void edit(Note note) {
         modelNote.activeNote().set(note);
-        AppViewManager.EDIT_NOTE_VIEW.switchView();
+        AppManager.getInstance().switchView(EDIT_NOTE_VIEW);
     }
     
     private void remove(Note note) {

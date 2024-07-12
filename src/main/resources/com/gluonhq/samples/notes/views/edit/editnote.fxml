@@ -14,12 +14,12 @@
    <center>
       <VBox prefHeight="200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="title" promptText="%title.prompt" styleClass="light" />
-            <TextArea fx:id="comment" prefHeight="150.0" promptText="%comment.prompt" wrapText="true" styleClass="light, full-width" />
+            <TextField fx:id="title" promptText="Title" styleClass="light" />
+            <TextArea fx:id="comment" prefHeight="150.0" promptText="Comment..." wrapText="true" styleClass="light, full-width" />
             <HBox alignment="TOP_RIGHT" prefHeight="55.0" spacing="5.0" styleClass="top-box">
                <children>
-                  <Button id="cancel-button" fx:id="cancel" mnemonicParsing="false" text="%button.cancel.text" styleClass="light, flat" />
-                  <Button id="submit-button" fx:id="submit" defaultButton="true" mnemonicParsing="false" text="%button.submit.text" styleClass="light, flat" />
+                  <Button id="cancel-button" fx:id="cancel" mnemonicParsing="false" text="Cancel" styleClass="light, flat" />
+                  <Button id="submit-button" fx:id="submit" defaultButton="true" mnemonicParsing="false" text="Submit" styleClass="light, flat" />
                </children>
                <padding>
                   <Insets left="5.0" right="5.0" />

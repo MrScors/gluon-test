@@ -27,6 +27,10 @@ public class DrawerManager {
         final Item hivesView = new ViewItem("Hives", MaterialDesignIcon.HOME.graphic(), HIVES_VIEW, ViewStackPolicy.SKIP);
         final Item notesView = new ViewItem("Notes", MaterialDesignIcon.LIST.graphic(), NOTES_VIEW, ViewStackPolicy.SKIP);
         final Item inspectionsView = new ViewItem("Inspections", MaterialDesignIcon.CHECK.graphic(), INSPECTIONS_VIEW, ViewStackPolicy.SKIP);
+//        final Item inspectionDetailsView = new ViewItem("Inspection", MaterialDesignIcon.CHECK.graphic(), INSPECTIONS_VIEW, ViewStackPolicy.SKIP);
+//        final Item editHiveView = new ViewItem("Edit Hive", MaterialDesignIcon.CHECK.graphic(), INSPECTIONS_VIEW, ViewStackPolicy.SKIP);
+//        final Item editNoteView = new ViewItem("Edit Note", MaterialDesignIcon.CHECK.graphic(), INSPECTIONS_VIEW, ViewStackPolicy.SKIP);
+//        final Item editInspectionView = new ViewItem("Edit Inspection", MaterialDesignIcon.CHECK.graphic(), INSPECTIONS_VIEW, ViewStackPolicy.SKIP);
         drawer.getItems().addAll(hivesView, notesView, inspectionsView);
 
         if (Platform.isDesktop()) {

@@ -63,7 +63,7 @@ public class InspectionDetailsPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e ->
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText("Title");
+                appBar.setTitleText("Inspection");
             }
         });
 

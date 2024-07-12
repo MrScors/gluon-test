@@ -55,6 +55,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
+import static com.gluonhq.samples.notes.Main.EDIT_INSPECTION_VIEW;
+import static com.gluonhq.samples.notes.Main.INSPECTION_DETAILS_VIEW;
+
 public class InspectionsPresenter {
 
     private static final PseudoClass PSEUDO_FILTER_ENABLED = PseudoClass.getPseudoClass("filter-enabled");
@@ -81,7 +84,7 @@ public class InspectionsPresenter {
                 AppBar appBar = AppManager.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e ->
                         AppManager.getInstance().getDrawer().open()));
-                appBar.setTitleText("Title");
+                appBar.setTitleText("Inspections");
             }
         });
 
@@ -124,7 +127,7 @@ public class InspectionsPresenter {
 
     private void edit(Inspection inspection) {
         modelInspection.getActiveInspection().set(inspection);
-        AppViewManager.EDIT_INSPECTION_VIEW.switchView();
+        AppManager.getInstance().switchView(EDIT_INSPECTION_VIEW);
     }
 
     private void remove(Inspection inspection) {
@@ -132,7 +135,7 @@ public class InspectionsPresenter {
     }
     private void viewDetails(Inspection inspection) {
         modelInspection.getActiveInspection().set(inspection);
-        AppViewManager.INSPECTION_DETAILS_VIEW.switchView();
+        AppManager.getInstance().switchView(INSPECTION_DETAILS_VIEW);
     }
 
     private void updateSettings() {
